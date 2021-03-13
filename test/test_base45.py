@@ -4,6 +4,7 @@ from base45 import b45decode, b45encode
 
 GOOD_DATA = [
     (b"Hello!", "%69 VD92E"),
+    (b"Hello!!", "%69 VD92EX0"),
     (
         b"The quick brown fox jumps over the lazy dog",
         "8UADZCKFEOEDJOD2KC54EM-DX.CH8FSKDQ$D.OE44E5$CS44+8DK44OEC3EFGVCD2",
