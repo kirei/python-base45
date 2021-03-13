@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "base45"
+version = "0.1.0"
+description = "Base45 Encoder/Decoder"
+authors = ["Jakob Schlyter <jakob@kirei.se>"]
+license = "BSD"
+
+[tool.poetry.dependencies]
+python = "^3.7"
+
+[tool.poetry.dev-dependencies]
+black = "^20.8b1"
+isort = "^5.6.4"
+pylama = "^7.7.1"
+pytest = "^6.1.2"
+pytest-black = "^0.3.12"
+pytest-isort = "^1.2.0"
+
+[tool.poetry.scripts]
+base45 = "base45.cli:main"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.isort]
+profile = "black"
