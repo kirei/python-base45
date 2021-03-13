@@ -14,7 +14,7 @@ GOOD_DATA = [
     ),
 ]
 
-BAD_STRINGS = ["xyzzy", "::::"]
+BAD_STRINGS = ["xyzzy", "::::", "a"]
 
 
 class TestBase45(unittest.TestCase):
