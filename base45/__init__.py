@@ -30,11 +30,10 @@ def b45decode(s: str) -> bytes:
         while buf:
             if len(buf) >= 3:
                 x = buf.pop(0) + buf.pop(0) * 45 + buf.pop(0) * 45 * 45
-                a, b = divmod(x, 256)
-                res.extend([a, b])
+                res.extend(list(divmod(x, 256)))
             else:
                 x = buf.pop(0) + buf.pop(0) * 45
-                res.extend([x % 256])
+                res.append(x)
         return bytes(res)
     except (ValueError, IndexError):
         raise ValueError("Invalid base45 string")
