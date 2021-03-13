@@ -3,6 +3,7 @@ import unittest
 from base45 import b45decode, b45encode
 
 GOOD_DATA = [
+    (b"", ""),
     (b"AB", "BB8"),
     (b"Hello!!", "%69 VD92EX0"),
     (b"base-45", "UJCLQE7W581"),
