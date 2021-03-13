@@ -24,8 +24,8 @@ def main() -> None:
         data = sys.stdin.buffer.read()
         sys.stdout.write(b45encode(data))
     elif args.decode:
-        data = sys.stdin.read()
-        sys.stdout.buffer.write(b45decode(data))
+        data = sys.stdin.buffer.read()
+        sys.stdout.buffer.write(b45decode(data.decode()))
     else:
         parser.print_help()
         sys.exit(1)
