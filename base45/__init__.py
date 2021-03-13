@@ -12,15 +12,12 @@ def b45encode(s: bytes) -> str:
     while buf:
         if len(buf) >= 2:
             x = (buf.pop(0) << 8) + buf.pop(0)
-            e = x // 45 // 45
-            x -= e * 45 * 45
-            d = x // 45
-            c = x % 45
+            e, x = divmod(x, 45 * 45)
+            d, c = divmod(x, 45)
             res += BASE45_CHARSET[c] + BASE45_CHARSET[d] + BASE45_CHARSET[e]
         else:
             x = buf.pop(0)
-            d = x // 45
-            c = x % 45
+            d, c = divmod(x, 45)
             res += BASE45_CHARSET[c] + BASE45_CHARSET[d]
     return res
 
@@ -33,7 +30,8 @@ def b45decode(s: str) -> bytes:
         while buf:
             if len(buf) >= 3:
                 x = buf.pop(0) + buf.pop(0) * 45 + buf.pop(0) * 45 * 45
-                res.extend([x // 256, x % 256])
+                a, b = divmod(x, 256)
+                res.extend([a, b])
             else:
                 x = buf.pop(0) + buf.pop(0) * 45
                 res.extend([x % 256])
