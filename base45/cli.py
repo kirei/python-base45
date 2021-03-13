@@ -27,7 +27,8 @@ def main() -> None:
         data = sys.stdin.read()
         sys.stdout.buffer.write(b45decode(data))
     else:
-        raise RuntimeError("Nothing to do!")
+        parser.print_help()
+        sys.exit(1)
 
 
 if __name__ == "__main__":
