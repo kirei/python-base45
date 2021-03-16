@@ -7,7 +7,7 @@ from base45 import b45decode, b45encode
 def main() -> None:
     """Main function"""
 
-    parser = argparse.ArgumentParser(description="base45 encoder/decoder")
+    parser = argparse.ArgumentParser(description="Base45 encoder/decoder")
     parser.add_argument(
         "--encode",
         action="store_true",
