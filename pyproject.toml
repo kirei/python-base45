@@ -3,7 +3,7 @@ name = "base45"
 version = "0.1.0"
 description = "Base45 Encoder/Decoder"
 authors = ["Jakob Schlyter <jakob@kirei.se>"]
-license = "BSD"
+license = "BSD-2-Clause"
 repository = "https://github.com/kirei/python-base45"
 readme = "README.md"
 
