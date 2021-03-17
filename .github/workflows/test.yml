@@ -29,13 +29,9 @@ jobs:
         poetry config virtualenvs.in-project true
     - name: Install dependencies
       run: poetry install
-    - name: Check formatting
-      run: |
-        poetry run isort --check base45
-        poetry run black --check base45
     - name: Lint
       run: |
         poetry run pylama base45
     - name: Test
       run: |
-        poetry run pytest
+        poetry run pytest -v --black --isort
