@@ -4,6 +4,8 @@ version = "0.1.0"
 description = "Base45 Encoder/Decoder"
 authors = ["Jakob Schlyter <jakob@kirei.se>"]
 license = "BSD"
+repository = "https://github.com/kirei/python-base45"
+readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.7"
