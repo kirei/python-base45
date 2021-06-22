@@ -22,7 +22,7 @@ def main() -> None:
 
     if args.encode:
         data = sys.stdin.buffer.read()
-        sys.stdout.write(b45encode(data))
+        sys.stdout.write(b45encode(data).decode())
     elif args.decode:
         data = sys.stdin.buffer.read()
         sys.stdout.buffer.write(b45decode(data.decode()))
