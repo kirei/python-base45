@@ -29,7 +29,7 @@ def b45decode(s: Union[bytes, str]) -> bytes:
     res = []
     try:
         if isinstance(s, str):
-            buf = [BASE45_CHARSET.index(c) for c in s]
+            buf = [BASE45_CHARSET.index(c) for c in s.strip()]
         else:
             buf = [BASE45_CHARSET.index(c) for c in s.decode()]
         buflen = len(buf)
