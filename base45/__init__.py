@@ -11,16 +11,16 @@ def b45encode(buf: bytes) -> bytes:
     """Convert bytes to base45-encoded string"""
     res = ""
     buflen = len(buf)
-    for i in range(0, buflen, 2):
-        if buflen - i > 1:
-            x = (buf[i] << 8) + buf[i + 1]
-            e, x = divmod(x, 45 * 45)
-            d, c = divmod(x, 45)
-            res += BASE45_CHARSET[c] + BASE45_CHARSET[d] + BASE45_CHARSET[e]
-        else:
-            x = buf[i]
-            d, c = divmod(x, 45)
-            res += BASE45_CHARSET[c] + BASE45_CHARSET[d]
+    for i in range(0, buflen & ~1, 2):
+        x = (buf[i] << 8) + buf[i + 1]
+        e, x = divmod(x, 45 * 45)
+        d, c = divmod(x, 45)
+        res += BASE45_CHARSET[c] + BASE45_CHARSET[d] + BASE45_CHARSET[e]
+    if buflen & 1:
+        i += 2
+        x = buf[i]
+        d, c = divmod(x, 45)
+        res += BASE45_CHARSET[c] + BASE45_CHARSET[d]
     return res.encode()
 
 
