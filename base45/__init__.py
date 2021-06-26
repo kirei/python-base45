@@ -34,13 +34,13 @@ def b45decode(s: Union[bytes, str]) -> bytes:
             buf = [BASE45_CHARSET.index(c) for c in s.decode()]
         buflen = len(buf)
         for i in range(0, buflen, 3):
-            x = buf[i] + buf[i + 1] * 45
             if buflen - i >= 3:
                 x = buf[i] + buf[i + 1] * 45 + buf[i + 2] * 45 * 45
                 if x > 0xFFFF:
                     raise ValueError
                 res.extend(list(divmod(x, 256)))
             else:
+                x = buf[i] + buf[i + 1] * 45
                 res.append(x)
         return bytes(res)
     except (ValueError, IndexError, AttributeError):
