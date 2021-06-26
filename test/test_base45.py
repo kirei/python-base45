@@ -5,6 +5,7 @@ from base45 import b45decode, b45encode
 GOOD_DATA = [
     (b"", b""),
     (b"AB", b"BB8"),
+    (b"\xff\xff", b"FGW"),
     (b"Hello!!", b"%69 VD92EX0"),
     (b"base-45", b"UJCLQE7W581"),
     (b"ietf!", b"QED8WEX0"),
@@ -17,7 +18,7 @@ GOOD_DATA = [
     ),
 ]
 
-BAD_BASE45_STRINGS = [b"xyzzy", b"::::", b"a", 42]
+BAD_BASE45_STRINGS = [b"xyzzy", b"::::", b"a", 42, b"GGW"]
 
 
 class TestBase45(unittest.TestCase):
