@@ -1,5 +1,9 @@
 # Change Log
 
+## Develop
+
+- Improve decode speed by using a dictionary instead of string (@lucaslugao)
+
 ## 0.3.1
 
 - Do not silently accept overflow data on decode
