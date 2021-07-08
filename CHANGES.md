@@ -1,6 +1,6 @@
 # ChangeLog
 
-## [Unreleased]
+## [0.4.0]
 
 - Improve decode speed by using a dictionary instead of string by [@lucaslugao](https://github.com/lucaslugao)
 - Fix single byte/char edge cases in both encode and decode by [@lucaslugao](https://github.com/lucaslugao)
@@ -31,8 +31,7 @@
 - Initial release
 
 
-
-[unreleased]: https://github.com/kirei/python-base45/compare/v0.3.1...HEAD
+[0.4.0]: https://github.com/kirei/python-base45/compare/v0.3.1...v0.4.0
 [0.3.1]: https://github.com/kirei/python-base45/compare/v0.3.0...v0.3.1
 [0.3.0]: https://github.com/kirei/python-base45/compare/v0.2.1...v0.3.0
 [0.2.1]: https://github.com/kirei/python-base45/compare/v0.2.0...v0.2.1
