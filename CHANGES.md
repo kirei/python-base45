@@ -2,8 +2,9 @@
 
 ## [Unreleased]
 
-- Improve decode speed by using a dictionary instead of string by @lucaslugao
-- Fix single byte/char edge cases in both encode and decode by @lucaslugao
+- Improve decode speed by using a dictionary instead of string by [@lucaslugao](https://github.com/lucaslugao)
+- Fix single byte/char edge cases in both encode and decode by [@lucaslugao](https://github.com/lucaslugao)
+- Minor speed improvement in decode routine by [@dvmc](https://github.com/dvmc)
 
 ## [0.3.1]
 
@@ -11,7 +12,7 @@
 
 ## [0.3.0]
 
-- Optimized loop by @vinzenz
+- Optimized loop by [@vinzenz](https://github.com/vinzenz)
 
 ## [0.2.1]
 
