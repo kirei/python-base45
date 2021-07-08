@@ -5,6 +5,7 @@ Base45 Data Encoding as described in draft-faltstrom-base45-02
 from typing import Union
 
 BASE45_CHARSET = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ $%*+-./:"
+BASE45_DICT = {v: i for i, v in enumerate(BASE45_CHARSET)}
 
 
 def b45encode(buf: bytes) -> bytes:
@@ -29,9 +30,9 @@ def b45decode(s: Union[bytes, str]) -> bytes:
     res = []
     try:
         if isinstance(s, str):
-            buf = [BASE45_CHARSET.index(c) for c in s.strip()]
+            buf = [BASE45_DICT[c] for c in s.strip()]
         else:
-            buf = [BASE45_CHARSET.index(c) for c in s.decode()]
+            buf = [BASE45_DICT[c] for c in s.decode()]
         buflen = len(buf)
         for i in range(0, buflen, 3):
             if buflen - i >= 3:
@@ -43,5 +44,5 @@ def b45decode(s: Union[bytes, str]) -> bytes:
                 x = buf[i] + buf[i + 1] * 45
                 res.append(x)
         return bytes(res)
-    except (ValueError, IndexError, AttributeError):
+    except (ValueError, KeyError, AttributeError):
         raise ValueError("Invalid base45 string")
