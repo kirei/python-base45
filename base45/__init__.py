@@ -17,15 +17,15 @@ def b45encode(buf: bytes) -> bytes:
         d, c = divmod(x, 45)
         res += BASE45_CHARSET[c] + BASE45_CHARSET[d] + BASE45_CHARSET[e]
     if buflen & 1:
-        i += 2
-        x = buf[i]
-        d, c = divmod(x, 45)
+        d, c = divmod(buf[-1], 45)
         res += BASE45_CHARSET[c] + BASE45_CHARSET[d]
     return res.encode()
 
 
 def b45decode(s: Union[bytes, str]) -> bytes:
     """Decode base45-encoded string to bytes"""
+    if len(s) == 1:
+        raise ValueError("Invalid base45 string")
     res = []
     try:
         if isinstance(s, str):
@@ -39,9 +39,11 @@ def b45decode(s: Union[bytes, str]) -> bytes:
                 if x > 0xFFFF:
                     raise ValueError
                 res.extend(list(divmod(x, 256)))
-            else:
+            elif buflen - i == 2:
                 x = buf[i] + buf[i + 1] * 45
                 res.append(x)
+            else:
+                res.append(buf[i])
         return bytes(res)
     except (ValueError, IndexError, AttributeError):
         raise ValueError("Invalid base45 string")
