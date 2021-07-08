@@ -3,6 +3,7 @@
 ## Develop
 
 - Improve decode speed by using a dictionary instead of string (@lucaslugao)
+- Fix single byte/char edge cases in both encode and decode (@lucaslugao)
 
 ## 0.3.1
 
