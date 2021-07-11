@@ -25,7 +25,7 @@ GOOD_DATA = [
     (bytes("foo © bar 𝌆 baz", "UTF-8"), b"X.C82EIROA44GECH74C-J1/GUJCW2"),
 ]
 
-BAD_BASE45_STRINGS = [b"xyzzy", b"::::", b"a", b"GGW", b":", b"0"]
+BAD_BASE45_STRINGS = [b"xyzzy", b"::::", b"a", b"GGW", b":", b"0", b"::"]
 
 
 class TestBase45(unittest.TestCase):
