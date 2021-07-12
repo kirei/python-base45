@@ -1,5 +1,9 @@
 # ChangeLog
 
+## [0.4.1]
+
+- Improve type checking and better check for edge cases in decode, by [@lucaslugao](https://github.com/lucaslugao)
+
 ## [0.4.0]
 
 - Improve decode speed by using a dictionary instead of string by [@lucaslugao](https://github.com/lucaslugao)
@@ -31,6 +35,7 @@
 - Initial release
 
 
+[0.4.1]: https://github.com/kirei/python-base45/compare/v0.4.0...v0.4.1
 [0.4.0]: https://github.com/kirei/python-base45/compare/v0.3.1...v0.4.0
 [0.3.1]: https://github.com/kirei/python-base45/compare/v0.3.0...v0.3.1
 [0.3.0]: https://github.com/kirei/python-base45/compare/v0.2.1...v0.3.0
