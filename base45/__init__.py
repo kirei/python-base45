@@ -27,7 +27,7 @@ def b45decode(s: Union[bytes, str]) -> bytes:
     """Decode base45-encoded string to bytes"""
     try:
         if isinstance(s, str):
-            buf = [BASE45_DICT[c] for c in s.strip()]
+            buf = [BASE45_DICT[c] for c in s.rstrip('\n')]
         elif isinstance(s, bytes):
             buf = [BASE45_DICT[c] for c in s.decode()]
         else:
