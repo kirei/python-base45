@@ -8,7 +8,7 @@ repository = "https://github.com/kirei/python-base45"
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.7"
+python = "^3.6"
 
 [tool.poetry.dev-dependencies]
 black = "^20.8b1"
