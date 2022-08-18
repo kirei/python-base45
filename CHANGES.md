@@ -1,5 +1,9 @@
 # ChangeLog
 
+## [0.4.4]
+
+- [RFC 9285 ](https://www.rfc-editor.org/info/rfc9285) published
+
 ## [0.4.3]
 
 - Allow Python 3.6
@@ -43,6 +47,7 @@
 - Initial release
 
 
+[0.4.4]: https://github.com/kirei/python-base45/compare/v0.4.3...v0.4.4
 [0.4.3]: https://github.com/kirei/python-base45/compare/v0.4.2...v0.4.3
 [0.4.2]: https://github.com/kirei/python-base45/compare/v0.4.1...v0.4.2
 [0.4.1]: https://github.com/kirei/python-base45/compare/v0.4.0...v0.4.1
