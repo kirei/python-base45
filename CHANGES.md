@@ -2,7 +2,7 @@
 
 ## [0.4.4]
 
-- [RFC 9285 ](https://www.rfc-editor.org/info/rfc9285) published
+- [RFC 9285](https://www.rfc-editor.org/info/rfc9285) published
 
 ## [0.4.3]
 
