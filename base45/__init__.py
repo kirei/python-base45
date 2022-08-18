@@ -1,5 +1,5 @@
 """
-Base45 Data Encoding as described in draft-faltstrom-base45-02
+Base45 Data Encoding as described in RFC 9285
 """
 
 from typing import Union
