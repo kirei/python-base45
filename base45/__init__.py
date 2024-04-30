@@ -50,5 +50,5 @@ def b45decode(s: Union[bytes, str]) -> bytes:
                     raise ValueError
                 res.append(x)
         return bytes(res)
-    except (ValueError, KeyError, AttributeError):
-        raise ValueError("Invalid base45 string")
+    except (ValueError, KeyError, AttributeError) as exc:
+        raise ValueError("Invalid base45 string") from exc

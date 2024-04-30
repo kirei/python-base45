@@ -52,7 +52,7 @@ class TestBase45(unittest.TestCase):
 
     def test_decode_encoded(self):
         random.seed(42)
-        for i in range(142):
+        for _ in range(142):
             binary = bytes(
                 [random.randint(0, 255) for _ in range(random.randint(0, 142))]
             )
