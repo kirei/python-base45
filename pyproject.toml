@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "base45"
-version = "0.4.4"
+version = "0.5.0"
 description = "Base45 Encoder/Decoder"
 authors = ["Jakob Schlyter <jakob@kirei.se>"]
 license = "BSD-2-Clause"
@@ -8,15 +8,13 @@ repository = "https://github.com/kirei/python-base45"
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.6"
+python = "^3.8"
 
-[tool.poetry.dev-dependencies]
-black = "^22.3.0"
-isort = "^5.10.1"
-pylama = "^7.7.1"
-pytest = "^6.1.2"
-pytest-black = "^0.3.12"
-pytest-isort = "^1.2.0"
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.4.2"
+pytest = "^8.2.0"
+isort = "^5.13.2"
+pytest-isort = "^4.0.0"
 
 [tool.poetry.scripts]
 base45 = "base45.cli:main"
@@ -27,3 +25,20 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.isort]
 profile = "black"
+
+[tool.ruff.lint]
+select = [
+    # pycodestyle
+    "E",
+    # Pyflakes
+    "F",
+    # pyupgrade
+    "UP",
+    # flake8-bugbear
+    "B",
+    # flake8-simplify
+    "SIM",
+    # isort
+    "I",
+]
+ignore = ["E501", "I001"]
