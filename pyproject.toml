@@ -1,30 +1,32 @@
-[tool.poetry]
+[project]
 name = "base45"
-version = "0.5.0"
+dynamic = ["version"]
 description = "Base45 Encoder/Decoder"
-authors = ["Jakob Schlyter <jakob@kirei.se>"]
+authors = [
+    { name = "Jakob Schlyter", email = "jakob@schlyter.se" }
+]
 license = "BSD-2-Clause"
-repository = "https://github.com/kirei/python-base45"
 readme = "README.md"
+requires-python = ">=3.9"
 
-[tool.poetry.dependencies]
-python = "^3.8"
+[project.urls]
+repository = "https://github.com/kirei/python-base45"
 
-[tool.poetry.group.dev.dependencies]
-ruff = "^0.4.2"
-pytest = "^8.2.0"
-isort = "^5.13.2"
-pytest-isort = "^4.0.0"
-
-[tool.poetry.scripts]
+[project.scripts]
 base45 = "base45.cli:main"
 
 [build-system]
-requires = ["poetry-core>=1.0.0"]
-build-backend = "poetry.core.masonry.api"
+requires = ["hatchling", "uv-dynamic-versioning"]
+build-backend = "hatchling.build"
 
-[tool.isort]
-profile = "black"
+[tool.hatch.version]
+source = "uv-dynamic-versioning"
+
+[dependency-groups]
+dev = [
+    "pytest>=8.4.2",
+    "ruff>=0.15.2",
+]
 
 [tool.ruff.lint]
 select = [
