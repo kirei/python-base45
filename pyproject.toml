@@ -3,7 +3,7 @@ name = "base45"
 dynamic = ["version"]
 description = "Base45 Encoder/Decoder"
 authors = [
-    { name = "Jakob Schlyter", email = "jakob@schlyter.se" }
+    { name = "Jakob Schlyter", email = "jakob@kirei.se" }
 ]
 license = "BSD-2-Clause"
 readme = "README.md"
